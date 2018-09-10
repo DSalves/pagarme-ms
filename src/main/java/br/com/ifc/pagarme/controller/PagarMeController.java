@@ -21,7 +21,7 @@ public class PagarMeController {
     private String message;
 	
 	@GetMapping("/servico")
-	public Resposta parser(@RequestParam("msg") String msg) {		
+	public Resposta parser(@RequestParam(name="msg", required=false) String msg) {		
 
 		Resposta resposta = new Resposta();
 		resposta.setPorta(Integer.parseInt(environment.getProperty("local.server.port")));

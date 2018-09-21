@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
-@SpringBootApplication(scanBasePackages= {"br.com.ifc.pagarme.controller"})
+@SpringBootApplication(scanBasePackages= {"br.com.ifc.pagarme.config", "br.com.ifc.pagarme.controller", "br.com.ifc.pagarme.filter"})
 public class Application {
 
 	public static void main(String[] args) {

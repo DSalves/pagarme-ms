@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.core.env.Environment;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,6 +26,7 @@ public class PagarMeController {
 	private String message;
 
 	@GetMapping("/servico")
+	@PreAuthorize("hasRole('ADMIN')")
 	public Resposta parser(@RequestParam(name = "msg", required = false) String msg) {
 
 		String ip = environment.getProperty("local.server.ip");
